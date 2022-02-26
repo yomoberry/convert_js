@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  babels:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: babels_testbed
+    volumes:
+      - ./app:/var/app
+    ports:
+      - "3200:3200"
+    tty: true
