@@ -14,7 +14,6 @@ RUN curl -sL https://deb.nodesource.com/setup_17.x | bash -
 RUN apt -y install nodejs
 RUN wget https://github.com/yarnpkg/yarn/releases/download/v1.9.4/yarn_1.9.4_all.deb \
     && dpkg -i yarn_1.9.4_all.deb
-RUN npm upgrade
 
 WORKDIR $APP_HOME
 
