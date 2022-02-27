@@ -1,17 +1,21 @@
-# Debian(v11) 
-FROM amazonlinux:2
+# Debian(v11) rubyつき
+FROM ruby:2.7.5-bullseye
 
-# 環境変数設定
 ENV APP_HOME /var/app
 
 # パッケージアップデート
-RUN yum -y update && yum -y upgrade
-RUN yum -y install \
+RUN apt -y update && apt -y upgrade
+RUN apt -y install \
     vim \
     git
     
-RUN curl -fsSL https://rpm.nodesource.com/setup_17.x | bash -
-RUN yum -y install nodejs
-RUN npm install --global yarn
+# nodejs
+RUN curl -sL https://deb.nodesource.com/setup_17.x | bash -
+RUN apt -y install nodejs
+RUN wget https://github.com/yarnpkg/yarn/releases/download/v1.9.4/yarn_1.9.4_all.deb \
+    && dpkg -i yarn_1.9.4_all.deb
+RUN npm upgrade
+
+WORKDIR $APP_HOME
 
 CMD ["/bin/bash"]
