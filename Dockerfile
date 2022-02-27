@@ -1,5 +1,5 @@
-# Debian(v11) rubyつき
-FROM ruby:2.7.5-bullseye
+# Debian(v11) 
+FROM debian:11
 
 ENV APP_HOME /var/app
 
@@ -9,11 +9,9 @@ RUN apt -y install \
     vim \
     git
     
-# nodejs
+# nodejs install
 RUN curl -sL https://deb.nodesource.com/setup_17.x | bash -
-RUN apt -y install nodejs
-RUN wget https://github.com/yarnpkg/yarn/releases/download/v1.9.4/yarn_1.9.4_all.deb \
-    && dpkg -i yarn_1.9.4_all.deb
+RUN apt -y install nodejs npm
 
 WORKDIR $APP_HOME
 
