@@ -28,7 +28,12 @@ npm install @babel/cli @babel/core @babel/preset-env
 npx babel server.js --out-file dist/server_converted.js
 ```
 
-- ※`npm install -g @babel/cli @babel/core @babel/preset-env`をやった場合、npxは不要
+- ※`npm install -g @babel/cli @babel/core @babel/preset-env`をやった場合、先頭のnpxは不要
+
+
+変換後、
+`node dist/server_converted.jsd.js`
+で　`http://localhost:3000/` を立ち上げられる。
 
 
 ### 備考
