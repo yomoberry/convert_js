@@ -1,17 +1,21 @@
 # おおまかなまとめ
 
+
+```
 npm init
 
 npm install -g @babel/cli
 npm install -g @babel/core
 npm install @babel/preset-env
 npm install hapi
+```
 
 
 実行
 
+```
 babel ./convert_from.js --out-file dist/convert_to.js
-
+```
 
 ### 備考
 
